@@ -1,0 +1,34 @@
+---
+title: Static CTF
+---
+
+<div class="row">
+  <form id="submit-flag-form" action="javascript:;">
+    <div class="col s6 m9">
+      <input id="flag" name="flag" type="text" value="" placeholder="FLAG-XXXXXXXXXXXXXX"/>
+    </div>
+    <div class="col s6 m3">
+      <input name="" type="submit" value="Verify" class="btn-large" />
+    </div>
+  </form>
+</div>
+
+<div class="challenges">
+    <div class="row">
+      <% blog.articles.each do |article| %>
+        <div class="col s12 m6 challenge" id="<%= article.data["id"] %>">
+          <ul class="collapsible">
+            <li>
+              <div class="collapsible-header active">
+                <i class="material-icons"></i>
+                <b><%= article.data['category'] %></b> &mdash; <%= article.title %>
+              </div>
+              <div class="collapsible-body">
+                <%= article.body %>
+              </div>
+            </li>
+          </ul>        
+        </div>
+      <% end %>
+    </div>
+</div>
